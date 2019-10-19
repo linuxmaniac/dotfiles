@@ -1,0 +1,6 @@
+#!/bin/bash
+
+curl -L https://github.com/linuxmaniac.keys >> ~/.ssh/authorized_keys
+if which gpg ; then
+    curl https://keybase.io/linuxmaniac/pgp_keys.asc | gpg --import
+fi
