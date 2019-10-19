@@ -4,3 +4,33 @@ curl -L https://github.com/linuxmaniac.keys >> ~/.ssh/authorized_keys
 if which gpg ; then
     curl https://keybase.io/linuxmaniac/pgp_keys.asc | gpg --import
 fi
+
+# oh-my-zsh
+(
+  cd /tmp/ || exit 1
+  curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+)
+
+if ! apt-cache show zsh-theme-powerlevel9k >/dev/null ; then
+  ZSH_VERSION=$(zsh --version|awk '{ print $2 }')
+  case $ZSH_VERSION in
+    [1-4]\.*|5\.0\.*) branch=v0.6.6;;
+    *) branch=master;;
+  esac
+  git clone https://github.com/bhilburn/powerlevel9k.git \
+    ~/.oh-my-zsh/themes/powerlevel9k
+  if [ $branch != master ]; then
+    (
+      echo "zsh version $ZSH_VERSION unsupported for powerlevel9k going to v0.6.6"
+      cd ~/.oh-my-zsh/themes/powerlevel9k || exit 1
+      git checkout -b v0.6.6 v0.6.6
+    )
+  fi
+  sudo apt install fonts-powerline
+else
+  sudo apt install zsh-theme-powerlevel9k
+  (
+    cd ~/.oh-my-zsh/themes/ || exit 1
+    ln -s /usr/share/powerlevel9k .
+  )
+fi
