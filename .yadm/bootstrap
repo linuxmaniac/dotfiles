@@ -5,6 +5,11 @@ if which gpg ; then
     curl https://keybase.io/linuxmaniac/pgp_keys.asc | gpg --import
 fi
 
+# debian
+wget --quiet --ca-directory /dev/null \
+  --ca-certificate /usr/share/ca-certificates/mozilla/DST_Root_CA_X3.crt \
+  -O ~/.ssh/debian_known_hosts https://db.debian.org/debian_known_hosts
+
 # oh-my-zsh
 (
   cd /tmp/ || exit 1
