@@ -38,3 +38,5 @@
 [commit]
 	verbose = true
     gpgsign = true
+[sipwise]
+	email = vseva@sipwise.com
