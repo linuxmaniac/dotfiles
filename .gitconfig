@@ -2,21 +2,6 @@
 	email = linuxmaniac@torreviejawireless.org
 	name = Victor Seva
 	signingkey = 51A09B18CF5A5068
-
-[alias]
-    cm = commit -am
-    st = status
-    co = checkout
-    amend = commit --amend
-
-    branches = branch -a
-    tags = tag
-    stashes = stash list
-
-    unstage = reset -q HEAD --
-    discard = checkout --
-    uncommit = reset --mixed HEAD~
-
 [push]
 	default = current
 [pull]
@@ -27,12 +12,11 @@
 	pushInsteadOf = https://salsa.debian.org/
 	insteadOf = salsa:
 [diff]
-    tool = meld
+	tool = meld
 [difftool]
-    prompt = false
+	prompt = false
 [difftool "meld"]
-    cmd = meld "$LOCAL" "$REMOTE"
-
+	cmd = meld "$LOCAL" "$REMOTE"
 [merge]
 	tool = smerge
 [commit]
