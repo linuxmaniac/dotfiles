@@ -34,9 +34,9 @@
     cmd = meld "$LOCAL" "$REMOTE"
 
 [merge]
-	tool = meld
+	tool = smerge
 [commit]
 	verbose = true
-    gpgsign = true
+	gpgSign = true
 [sipwise]
 	email = vseva@sipwise.com
