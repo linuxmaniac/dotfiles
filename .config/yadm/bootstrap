@@ -41,3 +41,7 @@ else
     ln -s /usr/share/powerlevel9k .
   )
 fi
+
+echo "set yadm repo to SSH"
+yadm remote set-url origin git@github.com:linuxmaniac/dotfiles.git
+yadm remote update
