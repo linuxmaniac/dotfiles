@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "install some essentials"
+sudo apt install curl libu2f-host0 gnupg pcscd scdaemon pcsc-tools pinentry-qt
 
 curl -L https://github.com/linuxmaniac.keys >> ~/.ssh/authorized_keys
 if which gpg ; then
