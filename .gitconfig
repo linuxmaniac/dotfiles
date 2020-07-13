@@ -24,3 +24,8 @@
 	gpgSign = true
 [sipwise]
 	email = vseva@sipwise.com
+[mergetool "smerge"]
+	cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	trustExitCode = true
+[help]
+	autoCorrect = 2
