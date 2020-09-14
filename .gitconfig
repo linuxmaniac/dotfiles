@@ -24,6 +24,8 @@
 	gpgSign = true
 [sipwise]
 	email = vseva@sipwise.com
+	uid = vseva
+	gpgSign = false
 [mergetool "smerge"]
 	cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
 	trustExitCode = true
