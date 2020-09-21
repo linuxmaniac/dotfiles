@@ -31,3 +31,5 @@
 	trustExitCode = true
 [help]
 	autoCorrect = 2
+[gitreview]
+	username = vseva
