@@ -5,7 +5,7 @@ if [ -e $HOME/bin ]; then
 fi
 
 export EDITOR="vim"
-
+export SHELL="/bin/zsh"
 export DEBEMAIL="vseva@debian.org"
 export DEBFULLNAME="Victor Seva"
 export GPGKEY=0xCF5A5068
