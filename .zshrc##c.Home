@@ -6,7 +6,6 @@ fi
 
 export EDITOR="vim"
 export SHELL="/bin/zsh"
-export SERVER=$(hostname)
 export DEBEMAIL="vseva@debian.org"
 export DEBFULLNAME="Victor Seva"
 export GPGKEY=0xCF5A5068
