@@ -1,0 +1,4 @@
+gpgconf --create-socketdir
+source ~/.zshrc##c.Server
+export PATH=$PATH:/usr/lib/go/bin
+export GOPATH=/usr/lib/go/
