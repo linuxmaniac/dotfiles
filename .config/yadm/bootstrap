@@ -13,6 +13,9 @@ sudo apt install curl libu2f-host0 gnupg pcscd scdaemon pcsc-tools pinentry-qt
 curl -L https://github.com/linuxmaniac.keys >> ~/.ssh/authorized_keys
 if which gpg ; then
     curl https://keybase.io/linuxmaniac/pgp_keys.asc | gpg --import
+    gpg --list-keys --fingerprint --with-colons | \
+        sed -E -n -e 's/^fpr:::::::::([0-9A-F]+):$/\1:6:/p' | \
+        gpg --import-ownertrust
 fi
 
 # debian
