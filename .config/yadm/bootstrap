@@ -3,11 +3,11 @@
 echo 'apt::install-recommends "false";' | sudo tee /etc/apt/apt.conf.d/90local
 
 echo "install some essentials"
-sudo apt install zsh vim tmux lnav curl libu2f-host0 gnupg pcscd scdaemon pcsc-tools pinentry-qt
+sudo apt install zsh vim tmux lnav curl libu2f-host0 gnupg pcscd scdaemon pcsc-tools pinentry-qt --yes
 
 curl -L https://github.com/linuxmaniac.keys >> ~/.ssh/authorized_keys
 if which gpg ; then
-    curl https://keybase.io/linuxmaniac/pgp_keys.asc | gpg --import
+    gpg --keyserver keyring.debian.org --recv-keys 8F19CADCD42A42D45563730C51A09B18CF5A5068
     gpg --list-keys --fingerprint --with-colons | \
         sed -E -n -e 's/^fpr:::::::::([0-9A-F]+):$/\1:6:/p' | \
         gpg --import-ownertrust
@@ -39,9 +39,9 @@ if ! apt-cache show zsh-theme-powerlevel9k >/dev/null ; then
       git checkout -b v0.6.6 v0.6.6
     )
   fi
-  sudo apt install fonts-powerline
+  sudo apt install fonts-powerline --yes
 else
-  sudo apt install zsh-theme-powerlevel9k
+  sudo apt install zsh-theme-powerlevel9k --yes
   (
     cd ~/.oh-my-zsh/themes/ || exit 1
     ln -s /usr/share/powerlevel9k .
