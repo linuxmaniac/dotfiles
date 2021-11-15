@@ -48,6 +48,8 @@ else
   )
 fi
 
+sudo chsh -s /bin/zsh $(whoami)
+
 echo "set yadm repo to SSH"
 yadm remote set-url origin git@github.com:linuxmaniac/dotfiles.git
 yadm remote update
