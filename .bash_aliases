@@ -3,7 +3,5 @@ alias lg="git log --date-order --graph --abbrev-commit --decorate --date=relativ
 
 alias insecssh='ssh -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null"'
 alias insecscp='scp -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null"'
-alias insecsshfs='sshfs -o ssh_command="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"'
 
-alias cgrep="ngrep -d any -P \"'\" -W byline -T -i"
 alias gpg-agent-learn="gpg-connect-agent \"scd serialno\" \"learn --force\" /bye"
