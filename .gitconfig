@@ -18,7 +18,11 @@
 [difftool "meld"]
 	cmd = meld "$LOCAL" "$REMOTE"
 [merge]
-	tool = smerge
+	tool = meld
+[mergetool "meld"]
+	cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+[mergetool]
+	prompt = false
 [commit]
 	verbose = true
 	#gpgSign = true
@@ -26,9 +30,6 @@
 	email = vseva@sipwise.com
 	uid = vseva
 	gpgSign = false
-[mergetool "smerge"]
-	cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
-	trustExitCode = true
 [help]
 	autoCorrect = 2
 [gitreview]
