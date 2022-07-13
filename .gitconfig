@@ -34,3 +34,5 @@
 	autoCorrect = 2
 [gitreview]
 	username = vseva
+[core]
+	excludesfile = /home/vseva/.gitignore_global
