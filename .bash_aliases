@@ -6,3 +6,4 @@ alias insecscp='scp -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/nu
 alias insecrsync='rsync -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"'
 
 alias gpg-agent-learn="gpg-connect-agent \"scd serialno\" \"learn --force\" /bye"
+alias gpg-agent-restart="gpg-connect-agent reloadagent /bye"
