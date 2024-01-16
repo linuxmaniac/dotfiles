@@ -21,7 +21,9 @@ wget --quiet --ca-directory /dev/null \
 # oh-my-zsh
 (
   cd /tmp/ || exit 1
+  mv ~/.oh-my-zsh/custom/ /tmp && rm -rf ~/.oh-my-zsh/
   curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+  mv /tmp/custom/* ~/.oh-my-zsh/custom/
 )
 
 if ! apt-cache show zsh-theme-powerlevel9k >/dev/null ; then
