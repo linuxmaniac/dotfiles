@@ -50,7 +50,10 @@ else
   )
 fi
 
-sudo chsh -s /bin/zsh $(whoami)
+# zsh plugins
+sudo apt install zsh-syntax-highlighting zsh-autosuggestions
+
+sudo chsh -s /bin/zsh "$(whoami)"
 
 echo "set yadm repo to SSH"
 yadm remote set-url origin git@github.com:linuxmaniac/dotfiles.git
