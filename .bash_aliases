@@ -4,6 +4,7 @@ alias lg="git log --date-order --graph --abbrev-commit --decorate --date=relativ
 alias insecssh='ssh -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null"'
 alias insecscp='scp -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null"'
 alias insecrsync='rsync -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"'
+alias insecssh-copy-id='ssh-copy-id -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 
 alias gpg-agent-learn="gpg-connect-agent \"scd serialno\" \"learn --force\" /bye"
 alias gpg-agent-restart="gpg-connect-agent reloadagent /bye"
