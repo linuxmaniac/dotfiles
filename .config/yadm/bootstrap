@@ -7,7 +7,9 @@ echo "install some essentials"
 # shellcheck disable=SC2068
 sudo apt install ${PKGS[@]} --yes
 
-curl -L https://github.com/linuxmaniac.keys >> ~/.ssh/authorized_keys
+if [ ! -e ~/.ssh/authorized_keys ] ; then
+    wget --quiet https://github.com/linuxmaniac.keys -O ~/.ssh/authorized_keys
+fi
 if which gpg ; then
     gpg --keyserver keyring.debian.org --recv-keys 8F19CADCD42A42D45563730C51A09B18CF5A5068
     gpg --list-keys --fingerprint --with-colons | \
@@ -21,13 +23,14 @@ wget --quiet --ca-directory /dev/null \
   -O ~/.ssh/debian_known_hosts https://db.debian.org/debian_known_hosts
 
 # oh-my-zsh
-(
-  cd /tmp/ || exit 1
-  mv ~/.oh-my-zsh/custom/ /tmp && rm -rf ~/.oh-my-zsh/
-  curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-  mv /tmp/custom/* ~/.oh-my-zsh/custom/
-)
-
+if [ ! -d ~/.oh-my-zsh/plugins ] ; then
+  (
+    cd /tmp/ || exit 1
+    mv ~/.oh-my-zsh/custom/ /tmp && rm -rf ~/.oh-my-zsh/
+    curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+    mv /tmp/custom/* ~/.oh-my-zsh/custom/
+  )
+fi
 if ! apt-cache show zsh-theme-powerlevel9k >/dev/null ; then
   ZSH_VERSION=$(zsh --version|awk '{ print $2 }')
   case $ZSH_VERSION in
@@ -46,10 +49,12 @@ if ! apt-cache show zsh-theme-powerlevel9k >/dev/null ; then
   sudo apt install fonts-powerline --yes
 else
   sudo apt install zsh-theme-powerlevel9k --yes
-  (
-    cd ~/.oh-my-zsh/themes/ || exit 1
-    ln -s /usr/share/powerlevel9k .
-  )
+  if [ ! -e ~/.oh-my-zsh/themes/powerlevel9k ] ; then
+    (
+      cd ~/.oh-my-zsh/themes/ || exit 1
+      ln -s /usr/share/powerlevel9k .
+    )
+  fi
 fi
 
 # zsh plugins
