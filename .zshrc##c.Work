@@ -1,4 +1,3 @@
-export TERM="xterm-256color"
 # Path variables
 if [ -e $HOME/bin ]; then
     export PATH=$HOME/bin:$PATH
@@ -10,6 +9,7 @@ export DEBEMAIL="vseva@debian.org"
 export DEBFULLNAME="Victor Seva"
 export GPGKEY=0xCF5A5068
 export VAGRANT_NGCP_LAN='192\.168\.2\..*'
+export WORKON_HOME=$HOME/Env
 TMUX_THEME="/usr/share/tmux/theme-pack-jimeh/powerline/double/cyan.tmuxtheme"
 if [ -e "$TMUX_THEME" ] ; then
     export TMUX_THEME
@@ -26,17 +26,19 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 DEFAULT_USER=vseva
+POWERLEVEL9K_MODE=awesome-fontconfig
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs)
-export WORKON_HOME=$HOME/Env
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="powerlevel9k/powerlevel9k"
+if [ "$TERM" = "linux" ]; then
+    ZSH_THEME="robbyrussell"
+else
+    ZSH_THEME="powerlevel9k/powerlevel9k"
+fi
 plugins=(virtualenvwrapper gpg-agent tmux git fzf)
 DISABLE_AUTO_UPDATE=true
 DISABLE_UPDATE_PROMPT=true
-ZSH_TMUX_FIXTERM=true
 source $ZSH/oh-my-zsh.sh
-#. /usr/share/powerlevel9k/powerlevel9k.zsh-theme
 
 # omz annoying config disabled
 unsetopt share_history
