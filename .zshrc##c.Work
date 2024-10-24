@@ -36,7 +36,6 @@ else
     ZSH_THEME="powerlevel9k/powerlevel9k"
 fi
 plugins=(virtualenvwrapper gpg-agent tmux git fzf)
-DISABLE_AUTO_UPDATE=true
 DISABLE_UPDATE_PROMPT=true
 source $ZSH/oh-my-zsh.sh
 
