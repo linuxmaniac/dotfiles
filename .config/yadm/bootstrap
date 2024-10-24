@@ -65,4 +65,4 @@ yadm remote update
 sudo apt install tmux-plugin-manager tmux-themepack-jimeh
 
 # vim packages
-sudo apt install vim-airline vim-gitgutter
+sudo apt install vim-airline vim-airline-themes vim-gitgutter
