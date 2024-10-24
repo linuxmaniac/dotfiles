@@ -58,3 +58,9 @@ sudo chsh -s /bin/zsh "$(whoami)"
 echo "set yadm repo to SSH"
 yadm remote set-url origin git@github.com:linuxmaniac/dotfiles.git
 yadm remote update
+
+# tmux packages
+sudo apt install tmux-plugin-manager tmux-themepack-jimeh
+
+# vim packages
+sudo apt install vim-airline vim-gitgutter
