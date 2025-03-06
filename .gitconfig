@@ -2,12 +2,39 @@
 	email = linuxmaniac@torreviejawireless.org
 	name = Victor Seva
 	signingkey = 51A09B18CF5A5068
+#
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+	autoSetupMerge = simple
+[tag]
+	sort = version:refname
+[init]
+	defaultBranch = main
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
 [push]
-	default = current
-[pull]
-	rebase = true
+	default = simple
+	autoSetupRemote = true
+	followTags = true
 [fetch]
 	prune = true
+	pruneTags = true
+	all = true
+[rerere]
+	enabled = true
+	autoupdate = true
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
+#
+[pull]
+	rebase = true
 [url "git@salsa.debian.org:"]
 	pushInsteadOf = https://salsa.debian.org/
 	insteadOf = salsa:
@@ -36,3 +63,9 @@
 	username = vseva
 [core]
 	excludesfile = /home/vseva/.gitignore_global
+# email
+[sendemail]
+	smtpserver = smtp.protonmail.ch
+	smtpuser = linuxmaniac@torreviejawireless.org
+	smtpencryption = tls
+	smtpserverport = 587
