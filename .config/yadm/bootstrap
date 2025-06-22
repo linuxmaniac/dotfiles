@@ -2,7 +2,7 @@
 
 echo 'apt::install-recommends "false";' | sudo tee /etc/apt/apt.conf.d/90local
 
-PKGS=(zsh vim tmux lnav curl gnupg fzf)
+PKGS=(zsh vim tmux lnav curl gnupg fzf pcscd scdaemon)
 echo "install some essentials"
 # shellcheck disable=SC2068
 sudo apt install ${PKGS[@]} --yes
