@@ -8,7 +8,6 @@ export SHELL="/bin/zsh"
 export DEBEMAIL="vseva@debian.org"
 export DEBFULLNAME="Victor Seva"
 export GPGKEY=0xCF5A5068
-export VAGRANT_NGCP_LAN='192\.168\.2\..*'
 export WORKON_HOME=$HOME/Env
 TMUX_THEME="/usr/share/tmux/theme-pack-jimeh/powerline/double/cyan.tmuxtheme"
 if [ -e "$TMUX_THEME" ] ; then
