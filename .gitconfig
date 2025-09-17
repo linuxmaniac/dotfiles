@@ -52,11 +52,7 @@
 	prompt = false
 [commit]
 	verbose = true
-	#gpgSign = true
-[sipwise]
-	email = vseva@sipwise.com
-	uid = vseva
-	gpgSign = false
+	gpgSign = true
 [help]
 	autoCorrect = 2
 [gitreview]
