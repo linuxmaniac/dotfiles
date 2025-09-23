@@ -9,7 +9,8 @@ export SHELL="/bin/zsh"
 export DEBEMAIL="vseva@debian.org"
 export DEBFULLNAME="Victor Seva"
 export GPGKEY=0xCF5A5068
-
+POWERLEVEL9K_MODE=awesome-fontconfig
+POWERLEVEL9K_PYTHON_ICON='\Uf0ad '
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv context dir vcs)
 export WORKON_HOME=$HOME/Env
 ZSH=$HOME/.oh-my-zsh

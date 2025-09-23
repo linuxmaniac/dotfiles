@@ -13,7 +13,8 @@ export GPGKEY=0xCF5A5068
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte-2.91.sh
 fi
-
+POWERLEVEL9K_MODE=awesome-fontconfig
+POWERLEVEL9K_PYTHON_ICON='\Uf0ad '
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv context dir vcs)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
