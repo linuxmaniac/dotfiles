@@ -65,3 +65,5 @@
 	smtpuser = linuxmaniac@torreviejawireless.org
 	smtpencryption = tls
 	smtpserverport = 587
+[alias]
+	commit-reuse = commit -eF .git/COMMIT_EDITMSG
