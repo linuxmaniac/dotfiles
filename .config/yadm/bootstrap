@@ -46,9 +46,9 @@ if ! apt-cache show zsh-theme-powerlevel9k >/dev/null ; then
       git checkout -b v0.6.6 v0.6.6
     )
   fi
-  sudo apt install fonts-powerline --yes
+  sudo apt install fonts-font-awesome fonts-powerline --yes
 else
-  sudo apt install zsh-theme-powerlevel9k --yes
+  sudo apt install fonts-font-awesome zsh-theme-powerlevel9k --yes
   if [ ! -e ~/.oh-my-zsh/themes/powerlevel9k ] ; then
     (
       cd ~/.oh-my-zsh/themes/ || exit 1
